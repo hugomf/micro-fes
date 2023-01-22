@@ -11,7 +11,7 @@ const ShoppingBag = () => {
         {'id': '5', 'name': 'prod5', 'price': '1.20'},
     ];
 
-    const { cart, addItem, removeItem } = Cart();
+    const { cart, addItem, removeItem, updateItemQuantity } = Cart();
 
     return (
         <div>
@@ -19,7 +19,8 @@ const ShoppingBag = () => {
                 <tbody>
                 <For each={cart.items}>
                     {(item) =>
-                       <ShoppingItem item={item} removeItem={removeItem} addItem={addItem} />
+                       <ShoppingItem item={item} removeItem={removeItem} 
+                        addItem={addItem} updateItemQuantity={updateItemQuantity} />
                     }
                 </For>
                 </tbody>

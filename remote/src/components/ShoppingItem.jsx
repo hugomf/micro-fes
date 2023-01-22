@@ -1,10 +1,16 @@
-import { createEffect, For } from 'solid-js'
+import { createEffect, For, createSignal } from 'solid-js'
 import "./ShoppingBag.scss"
 import { FaRegularTrashCan } from 'solid-icons/fa'
 
 const ShoppingItem = (props) => {
 
-    const { item, removeItem, addItem } = props;
+    const { item, removeItem, addItem, updateItemQuantity } = props;
+    const [quantity, setQuantity] =  createSignal(item.quantity);
+
+    const updateQuantity = (quantity) => {
+        updateItemQuantity(item, quantity);
+        setQuantity(quantity);
+    }
 
     return (
         <tr class="shoppingItem">
@@ -13,7 +19,7 @@ const ShoppingItem = (props) => {
             <td class="col">
                 <div class="quantityGroup">
                     <button class="btnQuantity" onClick={() => removeItem(item)}>-</button>
-                    <input class="quantity" type="text" value={item.quantity}></input>
+                    <input class="quantity" type="text" value={quantity()} onInput={(e) => updateQuantity(e.currentTarget.value)}></input>
                     <button class="btnQuantity" onClick={() => addItem(item)}>+</button>
                 </div>
             </td>

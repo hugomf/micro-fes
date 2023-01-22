@@ -42,13 +42,29 @@ const removeItem = (item,cart,setCart) => {
     });
 }
 
+const updateItemQuantity = (item, quantity, cart, setCart) => {
+    const idx = cart.items.findIndex(itm => itm.id === item.id);
+    let updatedItems;
+    if (idx !== -1) {
+        updatedItems = cart.items.map((itm, i) => (i === idx) ? {...itm, quantity: quantity} : itm);
+    } 
+    setCart({
+        items: updatedItems,
+        total: updateTotal(updatedItems)
+    });
+}
+
 const Cart = () => {
     const [cart, setCart] = createLocalStore({
         items: [],
         total: 0
     });
 
-    return { cart, addItem: (item) => addItem(item,cart,setCart), removeItem: (item) => removeItem(item,cart,setCart)};
+    return { cart, 
+        addItem: (item) => addItem(item,cart,setCart), 
+        removeItem: (item) => removeItem(item,cart,setCart),
+        updateItemQuantity: (item) => updateItemQuantity(item, quantity, cart, setCart)
+    };
 }
 
 export default Cart;
