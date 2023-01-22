@@ -1,0 +1,52 @@
+.shoppingBag {
+    
+}
+
+th, td {
+    //border: 1px solid black;
+    border-bottom: 1px solid grey;
+    padding: 6px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.quantityGroup {
+    border: 1px solid grey;
+    display:flex;
+    flex-direction: row;
+}
+
+.btnQuantity {
+    border: 1px solid grey;
+    padding: 10px;
+    text-align: center; 
+}
+
+.quantity {
+    width: 60px;
+    text-align: center; 
+    padding-right: 5px;
+    
+}
+
+tr.shoppingItem {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+.Products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.Product {
+    border: 1px solid black;
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
