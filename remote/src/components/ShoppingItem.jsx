@@ -8,6 +8,8 @@ const ShoppingItem = (props) => {
     const [quantity, setQuantity] =  createSignal(item.quantity);
 
     const updateQuantity = (quantity) => {
+        if (!quantity) quantity = 0;
+        //alert(quantity);
         updateItemQuantity(item, quantity);
         setQuantity(quantity);
     }

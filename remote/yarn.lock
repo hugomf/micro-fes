@@ -1009,6 +1009,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@solid-primitives/keyed@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/keyed/-/keyed-1.1.5.tgz#7bf96aede73f29c17c01b71f46afbd2ba1ef7e30"
+  integrity sha512-vLa7exYYOwf0t25e/Qa17NtEMB3wxkwvNkl1/zvysNVf3E+upZMw2QpY4uE6o0vwr9cLMno1lL+kQ3891kXlOQ==
+
 "@types/body-parser@*":
   version "1.19.2"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"

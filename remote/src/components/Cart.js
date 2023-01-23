@@ -63,7 +63,7 @@ const Cart = () => {
     return { cart, 
         addItem: (item) => addItem(item,cart,setCart), 
         removeItem: (item) => removeItem(item,cart,setCart),
-        updateItemQuantity: (item) => updateItemQuantity(item, quantity, cart, setCart)
+        updateItemQuantity: (item, quantity) => updateItemQuantity(item, quantity, cart, setCart)
     };
 }
 

@@ -1,6 +1,7 @@
 import ShoppingItem from './ShoppingItem';
 import Products from './Products';
 import Cart from './Cart';
+import {  Index } from "solid-js";
 
 const ShoppingBag = () => {
     const products = [
@@ -17,12 +18,12 @@ const ShoppingBag = () => {
         <div>
             <table class="shoppingBag">
                 <tbody>
-                <For each={cart.items}>
+                <Index each={cart.items} >
                     {(item) =>
-                       <ShoppingItem item={item} removeItem={removeItem} 
+                       <ShoppingItem item={item()} removeItem={removeItem} 
                         addItem={addItem} updateItemQuantity={updateItemQuantity} />
                     }
-                </For>
+                </Index>
                 </tbody>
             </table>
             <div>Total:${cart.total}</div>
